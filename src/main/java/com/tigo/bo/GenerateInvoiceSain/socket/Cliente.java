@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class Cliente extends Conexion
 {
-    public Cliente(int puerto, String host) throws IOException{super("cliente", puerto, host);} //Se usa el constructor para cliente de Conexion
+    public Cliente(int puerto, String host, String user, String pass) throws IOException{super(puerto, host, user, pass);} //Se usa el constructor para cliente de Conexion
 
     public void startClient() //Método para iniciar el cliente
     {
@@ -27,6 +27,8 @@ public class Cliente extends Conexion
         catch (Exception e)
         {
             System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Conexion terminada");
         }
     }
 }

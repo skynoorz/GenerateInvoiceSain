@@ -22,6 +22,12 @@ public class CountryEndpoint {
     @Value("${as400.host}")
     private String host; //Host para la conexión a as400
 
+    @Value("${as400.user}")
+    private String user; //Usuario para la conexión a as400
+
+    @Value("${as400.pass}")
+    private String password; //Passwrod para la conexión a as400
+
     private CountryRepository countryRepository;
 
     @Autowired
@@ -31,9 +37,9 @@ public class CountryEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCountryRequest")
     @ResponsePayload
-    public GetCountryResponse getCountry(@RequestPayload GetCountryRequest request) {
+    public GetCountryResponse getCountry(@RequestPayload GetCountryRequest request) throws IOException {
         /** Cliente usando sockets **/
-//        Cliente cli = new Cliente(puerto, host); //Se crea el cliente
+//        Cliente cli = new Cliente(puerto, host, user, password); //Se crea el cliente
 //
 //        System.out.println("Iniciando cliente\n");
 //        cli.startClient(); //Se inicia el cliente

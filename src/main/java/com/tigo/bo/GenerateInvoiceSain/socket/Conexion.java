@@ -12,16 +12,8 @@ public class Conexion
     protected Socket cs; //Socket del cliente
     protected DataOutputStream salidaServidor, salidaCliente; //Flujo de datos de salida
 
-    public Conexion(String tipo, int puerto, String host) throws IOException //Constructor
+    public Conexion(int puerto, String host, String name, String password) throws IOException //Constructor
     {
-        if(tipo.equalsIgnoreCase("servidor"))
-        {
-            ss = new ServerSocket(puerto);//Se crea el socket para el servidor en puerto 1234
-            cs = new Socket(); //Socket para el cliente
-        }
-        else
-        {
-            cs = new Socket(host, puerto); //Socket para el cliente en localhost en puerto 1234
-        }
+        cs = new Socket(host, puerto); //Socket para el cliente
     }
 }
