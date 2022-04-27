@@ -21,8 +21,6 @@ public class CountryRepository {
         country.setCapital("BOL");
 
         countries.put("BOL", country);
-//        countries.put("JPN",new Country("VENEZUELA", 2, "CAP2", "EUR"));
-//        countries.put("ARG",new Country("ARGENTINA", 3, "CAP3", "PLN"));
     }
 
     public Country findCountry(String name) {
