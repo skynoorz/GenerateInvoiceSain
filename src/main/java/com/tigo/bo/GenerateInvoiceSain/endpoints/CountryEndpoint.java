@@ -1,7 +1,7 @@
 package com.tigo.bo.GenerateInvoiceSain.endpoints;
 
-import bo.com.tigo.gen.GetCountryRequest;
-import bo.com.tigo.gen.GetCountryResponse;
+import bo.com.tigo.gen.ExampleRequest;
+import bo.com.tigo.gen.ExampleResponse;
 import com.tigo.bo.GenerateInvoiceSain.repositories.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -20,12 +20,11 @@ public class CountryEndpoint {
         this.countryRepository = countryRepository;
     }
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCountryRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "exampleRequest")
     @ResponsePayload
-    public GetCountryResponse getCountry(@RequestPayload GetCountryRequest request) {
-        GetCountryResponse response = new GetCountryResponse();
-        response.setCountry(countryRepository.findCountry(request.getName()));
-
+    public ExampleResponse getCountry(@RequestPayload ExampleRequest request) {
+        ExampleResponse response = new ExampleResponse();
+        response.setCountry(countryRepository.duplicateData(request));
         return response;
     }
 }

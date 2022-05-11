@@ -2,8 +2,11 @@
                   xmlns:gs="http://tigo.com.bo/gen">
     <soapenv:Header/>
     <soapenv:Body>
-        <gs:getCountryRequest>
-            <gs:name>BOL</gs:name>
-        </gs:getCountryRequest>
+        <gs:exampleRequest>
+            <gs:name>SPAIN</gs:name>
+            <gs:population>23221</gs:population>
+            <gs:capital>MADRID</gs:capital>
+            <gs:currency>EUR</gs:currency>
+        </gs:exampleRequest>
     </soapenv:Body>
 </soapenv:Envelope>

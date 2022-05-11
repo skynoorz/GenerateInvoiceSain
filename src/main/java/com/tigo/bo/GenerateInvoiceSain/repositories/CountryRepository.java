@@ -2,6 +2,7 @@ package com.tigo.bo.GenerateInvoiceSain.repositories;
 
 import bo.com.tigo.gen.Country;
 import bo.com.tigo.gen.Currency;
+import bo.com.tigo.gen.ExampleRequest;
 import java.util.HashMap;
 import java.util.Map;
 import javax.annotation.PostConstruct;
@@ -21,11 +22,18 @@ public class CountryRepository {
         country.setCapital("BOL");
 
         countries.put("BOL", country);
-//        countries.put("JPN",new Country("VENEZUELA", 2, "CAP2", "EUR"));
-//        countries.put("ARG",new Country("ARGENTINA", 3, "CAP3", "PLN"));
     }
 
     public Country findCountry(String name) {
         return countries.get(name);
+    }
+
+    public Country duplicateData(ExampleRequest request) {
+        Country country = new Country();
+        country.setName(request.getName());
+        country.setCurrency(request.getCurrency());
+        country.setPopulation(request.getPopulation());
+        country.setCapital(request.getCapital());
+        return country;
     }
 }
