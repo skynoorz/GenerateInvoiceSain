@@ -24,12 +24,52 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     }
 
     @Bean(name = "generateInvoiceSainRequest")
-    public DefaultWsdl11Definition defaultWsdl11(XsdSchema generateInvoiceSainRequestSchema) {
+    public DefaultWsdl11Definition defaultWsdl11Request(XsdSchema generateInvoiceSainRequestSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-        wsdl11Definition.setPortTypeName("GenerateInvoicePort");
+        wsdl11Definition.setPortTypeName("GenerateInvoicePortRequest");
         wsdl11Definition.setLocationUri("/ws");
         wsdl11Definition.setTargetNamespace("http://xmlns.tigo.com/SAIN/GenerateInvoiceSainRequest/V1/schema");
         wsdl11Definition.setSchema(generateInvoiceSainRequestSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean(name = "generateInvoiceSainResponse")
+    public DefaultWsdl11Definition defaultWsdl11Response(XsdSchema generateInvoiceSainResponseSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("GenerateInvoicePortResponse");
+        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setTargetNamespace("http://xmlns.tigo.com/SAIN/GenerateInvoiceSainResponse/V1/schema");
+        wsdl11Definition.setSchema(generateInvoiceSainResponseSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean(name = "parameterTypeV2")
+    public DefaultWsdl11Definition defaultWsdl11ParameterTypeV2Schema(XsdSchema parameterTypeV2Schema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("GenerateInvoicePortParameter");
+        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setTargetNamespace("http://xmlns.tigo.com/ParameterType/V2");
+        wsdl11Definition.setSchema(parameterTypeV2Schema);
+        return wsdl11Definition;
+    }
+
+    @Bean(name = "requestHeader")
+    public DefaultWsdl11Definition defaultWsdl11RequestHeader(XsdSchema requestHeaderSchema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("GenerateInvoicePortParameter");
+        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setTargetNamespace("http://xmlns.tigo.com/RequestHeader/V3");
+        wsdl11Definition.setSchema(requestHeaderSchema);
+        return wsdl11Definition;
+    }
+
+    @Bean(name = "responseHeaderV3")
+    public DefaultWsdl11Definition defaultWsdl11ResponseHeaderV3(XsdSchema responseHeaderV3Schema) {
+        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
+        wsdl11Definition.setPortTypeName("GenerateInvoicePortParameter");
+        wsdl11Definition.setLocationUri("/ws");
+        wsdl11Definition.setTargetNamespace("http://xmlns.tigo.com/ResponseHeader/V3");
+        wsdl11Definition.setSchema(responseHeaderV3Schema);
         return wsdl11Definition;
     }
 

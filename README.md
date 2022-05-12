@@ -25,8 +25,27 @@ El servidor se encontrará corriendo esperando peticiones SOAP
 
 #### WSDL location for test
 
+Con endpoint:
+
 ```http
   GET http://localhost:8080/ws/generateInvoiceSainRequest.wsdl
+```
+Sin endpoint aun:
+
+```http
+  GET http://localhost:8080/ws/generateInvoiceSainResponse.wsdl
+```
+
+```http
+  GET http://localhost:8080/ws/parameterTypeV2.wsdl
+```
+
+```http
+  GET http://localhost:8080/ws/requestHeader.wsdl
+```
+
+```http
+  GET http://localhost:8080/ws/responseHeaderV3.wsdl
 ```
 
 ## Authors
