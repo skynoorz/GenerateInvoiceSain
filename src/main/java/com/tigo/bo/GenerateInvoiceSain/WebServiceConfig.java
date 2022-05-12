@@ -45,31 +45,31 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 
     @Bean
     public XsdSchema countriesSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("countries.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("xsd/countries.xsd"));
     }
 
     @Bean
     public XsdSchema generateInvoiceSainRequestSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("GenerateInvoiceSainRequest.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("xsd/GenerateInvoiceSainRequest.xsd"));
     }
 
     @Bean
     public XsdSchema generateInvoiceSainResponseSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("GenerateInvoiceSainResponse.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("xsd/GenerateInvoiceSainResponse.xsd"));
     }
 
     @Bean
     public XsdSchema parameterTypeV2Schema() {
-        return new SimpleXsdSchema(new ClassPathResource("ParameterTypeV2.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("xsd/ParameterTypeV2.xsd"));
     }
 
     @Bean
     public XsdSchema requestHeaderSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("RequestHeaderV3.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("xsd/RequestHeaderV3.xsd"));
     }
 
     @Bean
     public XsdSchema responseHeaderV3Schema() {
-        return new SimpleXsdSchema(new ClassPathResource("ResponseHeaderV3.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("xsd/ResponseHeaderV3.xsd"));
     }
 }
