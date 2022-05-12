@@ -72,6 +72,11 @@
 				<configuration>
 					<sources>
 						<source>${project.basedir}/src/main/resources/countries.xsd</source>
+						<source>${project.basedir}/src/main/resources/GenerateInvoiceSainRequest.xsd</source>
+						<source>${project.basedir}/src/main/resources/GenerateInvoiceSainResponse.xsd</source>
+						<source>${project.basedir}/src/main/resources/ParameterTypeV2.xsd</source>
+						<source>${project.basedir}/src/main/resources/RequestHeaderV3.xsd</source>
+						<source>${project.basedir}/src/main/resources/ResponseHeaderV3.xsd</source>
 					</sources>
 				</configuration>
 			</plugin>

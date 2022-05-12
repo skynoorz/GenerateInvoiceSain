@@ -1,0 +1,62 @@
+<xsd:schema elementFormDefault="qualified"
+            targetNamespace="http://xmlns.tigo.com/SAIN/GenerateInvoiceSainRequest/V1/schema"
+            xmlns:tns="http://xmlns.tigo.com/SAIN/GenerateInvoiceSainRequest/V1/schema"
+            xmlns:headerRequest="http://xmlns.tigo.com/RequestHeader/V3" 
+            xmlns:headerResponse="http://xmlns.tigo.com/ResponseHeader/V3"
+            xmlns:par="http://xmlns.tigo.com/ParameterType/V2" 
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:import namespace="http://xmlns.tigo.com/ParameterType/V2"
+                schemaLocation="ParameterTypeV2.xsd" />
+    <xsd:import namespace="http://xmlns.tigo.com/RequestHeader/V3"
+                schemaLocation="RequestHeaderV3.xsd" />
+		
+    <xsd:element name="GenerateInvoiceSainRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="headerRequest:RequestHeader" />
+                <xsd:element name="requestBody">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="anexo" type="xsd:string"></xsd:element>
+                            <xsd:element name="bodegaOrigen" type="xsd:string"></xsd:element>
+                            <xsd:element name="codigoCliente" type="xsd:string"></xsd:element>
+                            <xsd:element name="codigoPromocion" type="xsd:string"></xsd:element>
+                            <xsd:element name="codigoSubsidio" type="xsd:string"></xsd:element>
+                            <xsd:element name="codigoDescuento" type="xsd:string"></xsd:element>
+                            <xsd:element name="codigoVendedor" type="xsd:string"></xsd:element>
+                            <xsd:element name="facturaSain" type="xsd:string"></xsd:element>
+                            <xsd:element name="tipoventa" type="xsd:string"></xsd:element>
+                            <xsd:element name="tipoDocumento" type="xsd:string"></xsd:element>
+                            <xsd:element name="unidadOperativa" type="xsd:string"></xsd:element>
+                            <xsd:element name="usuario" type="xsd:string"></xsd:element>
+                            <xsd:element name="nro_Documento" type="xsd:string"></xsd:element>
+                            <xsd:element name="nacionalidad" type="xsd:string"></xsd:element>
+                            <xsd:element name="detalleVentaDTO" type="tns:ListaDetalleVentaDTO"  />
+                            <xsd:element minOccurs="0" name="additionalParameters">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element ref="par:ParameterType" maxOccurs="unbounded"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="DetalleVentaDTO">
+        <xsd:sequence>
+            <xsd:element name="cantidad" type="xsd:string"/>
+            <xsd:element name="codigoArticulo" type="xsd:string"/>
+            <xsd:element name="precioOriginal" type="xsd:string"/>
+            <xsd:element name="precioVenta" type="xsd:string"/>
+            <xsd:element name="numeroserie" type="xsd:string" />            
+        </xsd:sequence>
+    </xsd:complexType>     
+    <xsd:complexType name="ListaDetalleVentaDTO">
+        <xsd:sequence>
+            <xsd:element name="listaDetalleVentaDTO" type="tns:DetalleVentaDTO" maxOccurs="unbounded"/>                     
+        </xsd:sequence>
+    </xsd:complexType>        
+</xsd:schema>
