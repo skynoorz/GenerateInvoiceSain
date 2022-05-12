@@ -26,17 +26,8 @@ El servidor se encontrará corriendo esperando peticiones SOAP
 #### WSDL location for test
 
 ```http
-  GET http://localhost:8080/ws/countries.wsdl
+  GET http://localhost:8080/ws/generateInvoiceSainRequest.wsdl
 ```
-
-| Parameter  | Type     | Description                                                   |
-|:-----------|:---------|:--------------------------------------------------------------|
-| `name`     | `string` | **Required**. Nombre del pais (BOL por ejemplo)               |
-| `population`     | `int`    | **Required**. Numero de población del pais                    |
-| `capital`     | `string` | **Required**. Capital del pais (por ejemplo Bolivia -> Sucre) |
-| `currency` | `string` | **Required**. Tipo de moneda (EUR, GBP, BOL)                  |
-
-
 
 ## Authors
 

@@ -23,16 +23,6 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         return new ServletRegistrationBean(servlet, "/ws/*");
     }
 
-    @Bean(name = "countries")
-    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema countriesSchema) {
-        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-        wsdl11Definition.setPortTypeName("CountriesPort");
-        wsdl11Definition.setLocationUri("/ws");
-        wsdl11Definition.setTargetNamespace("http://tigo.com.bo/gen");
-        wsdl11Definition.setSchema(countriesSchema);
-        return wsdl11Definition;
-    }
-
     @Bean(name = "generateInvoiceSainRequest")
     public DefaultWsdl11Definition defaultWsdl11(XsdSchema generateInvoiceSainRequestSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
@@ -41,11 +31,6 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         wsdl11Definition.setTargetNamespace("http://xmlns.tigo.com/SAIN/GenerateInvoiceSainRequest/V1/schema");
         wsdl11Definition.setSchema(generateInvoiceSainRequestSchema);
         return wsdl11Definition;
-    }
-
-    @Bean
-    public XsdSchema countriesSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("xsd/countries.xsd"));
     }
 
     @Bean

@@ -71,7 +71,6 @@
 				</executions>
 				<configuration>
 					<sources>
-						<source>${project.basedir}/src/main/resources/xsd/countries.xsd</source>
 						<source>${project.basedir}/src/main/resources/xsd/GenerateInvoiceSainRequest.xsd</source>
 						<source>${project.basedir}/src/main/resources/xsd/GenerateInvoiceSainResponse.xsd</source>
 						<source>${project.basedir}/src/main/resources/xsd/ParameterTypeV2.xsd</source>
